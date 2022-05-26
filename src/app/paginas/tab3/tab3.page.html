@@ -1,0 +1,25 @@
+<ion-header [translucent]="true" class="fondoFotos">
+  <ion-toolbar>
+    <ion-title>
+      Fotos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button (click)="takePhoto()" expand="block" shape="round">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Tomar foto
+  </ion-button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let img of tempImages">
+        <ion-img [src]="img"></ion-img>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+  
+
+</ion-content>

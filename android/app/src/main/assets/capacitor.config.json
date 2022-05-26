@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "noticiasWismo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

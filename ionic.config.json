@@ -1,0 +1,7 @@
+{
+  "name": "noticiasWismo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

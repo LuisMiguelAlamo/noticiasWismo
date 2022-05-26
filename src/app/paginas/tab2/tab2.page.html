@@ -1,0 +1,51 @@
+<ion-header [translucent]="true" class="fondoNotas">
+  <ion-toolbar>
+    <ion-title>
+      Notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input type="text" placeholder="Escribe el título" [(ngModel)]="nota.titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Texto</ion-label>
+      <ion-input type="text" placeholder="Escribe el texto" [(ngModel)]="nota.texto"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="crear()" expand="block" shape="round">
+    Añadir
+  </ion-button>
+
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let n of listaNotas">
+
+        <ion-item detail (click)="presentModal(n.titulo, n.texto)">
+          <ion-label>
+            <h1>{{n.titulo}}</h1>
+            <p>{{n.texto}}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option color="danger" (click)="eliminar(n.id)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="primary" (click)="editar(n)">
+            <ion-icon slot="start" name="build-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-list>
+
+
+
+</ion-content>
